@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ijse.database.dto.OrderDto;
 import com.ijse.database.entity.Order;
 import com.ijse.database.service.OrderService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class OrderController {
 
     @Autowired
