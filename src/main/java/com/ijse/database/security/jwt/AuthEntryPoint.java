@@ -1,10 +1,12 @@
 package com.ijse.database.security.jwt;
 
+import java.io.IOException;
+
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
-import io.jsonwebtoken.io.IOException;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -12,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class AuthEntryPoint implements AuthenticationEntryPoint {
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authenticationException) throws IOException, java.io.IOException {
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authenticationException) throws IOException, ServletException {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
     }
     
